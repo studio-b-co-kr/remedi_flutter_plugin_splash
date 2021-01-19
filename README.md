@@ -75,3 +75,5 @@ TODO
 [kakao_flutter_sdk Flutter package](https://pub.dev/packages/kakao_flutter_sdk)
 
 [kakao_flutter_mirror Flutter package](https://pub.dev/packages/kakao_flutter_mirror)
+
+[Flavors for Flutter](https://flutter.dev/docs/deployment/flavors)
