@@ -13,7 +13,7 @@ When creating a mobile app for a new Remedi project, first create Flutter app us
 Steps to change, if already created:
 
 - Find and replace in VSCode
-- Change maually in Xcode: Runner > Targets > General > Bundle Identifier
+- Change manually in Xcode: Runner > Targets > General > Bundle Identifier
 - Change manually in Android Studio: Android view > app > java > Show Options Menu > uncheck Compact Middle Packages > xxx.app_template > Refactor > Rename
 
 ### App name
@@ -22,6 +22,16 @@ Steps to chage app name:
 
 - for iOS -- `ios/Runner/Info.plist` file > value for `Bundle name` key
 - for Android -- `android/app/src/main/AndroidManifest.xml` file > value for `android:label` key
+
+### Flavors
+
+Add `dev` and `prod` flavors to Android and iOS so that environment variables could be defined later for `kakao_app_key` and `branch_key`.
+
+Eventually dev app should be able to be run using following command:
+
+```
+flutter run --flavor=dev -t lib/main-dev.dart
+```
 
 ### Android specific configuration
 
@@ -51,6 +61,8 @@ TODO
 7. Email login
 8. Permission check
 9. Firebase analytics, crashlytics, performance
+10. Logging
+11. Deep Links
 
 ## Resources
 
