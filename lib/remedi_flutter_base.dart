@@ -1,7 +1,6 @@
 library remedi_flutter_base;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:flutter_clean_arch/clean_architecture.dart';
+
+export 'app_container.dart';
+export 'login/login_manager.dart';
