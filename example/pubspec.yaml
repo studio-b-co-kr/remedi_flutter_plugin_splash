@@ -27,9 +27,20 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+
   cupertino_icons: ^1.0.0
   remedi_flutter_base:
     path: ../
+
+  kakao_flutter_mirror: ^1.0.3
+  sign_in_with_apple: ^2.5.4
+
+  firebase_core: ^0.5.3
+  firebase_analytics: ^6.3.0
+  firebase_performance: ^0.4.3
+  firebase_crashlytics: ^0.2.4
+  firebase_messaging: ^7.0.3
+  firebase_auth: ^0.18.4+1
 
 dev_dependencies:
   flutter_test:

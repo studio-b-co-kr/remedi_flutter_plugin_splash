@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 import 'package:remedi_flutter_base/splash/splash_view_model.dart';
+import 'package:remedi_flutter_base/splash/interface_splash_view_model.dart';
 
 import 'splash_view.dart';
 
@@ -27,7 +28,7 @@ class SplashPage extends BasePage<SplashViewModel> {
     this.loginPageRouteName,
     this.introPageRouteName,
     this.onBoardingPageRouteName,
-    SplashViewModel viewModel,
+    ISplashViewModel viewModel,
   }) : super(key: key, viewModel: viewModel);
 
   @override
