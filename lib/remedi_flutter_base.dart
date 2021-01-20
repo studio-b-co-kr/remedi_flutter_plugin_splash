@@ -1,7 +1,14 @@
 library remedi_flutter_base;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+import 'package:flutter/widgets.dart';
+
+export 'package:flutter_clean_arch/clean_architecture.dart';
+
+export 'app_container.dart';
+export 'intro/intro.dart';
+export 'login/login.dart';
+export 'onboarding/onboarding.dart';
+export 'permission/permissions.dart';
+export 'splash/splash.dart';
+
+typedef Route<dynamic> GenerateRoutes(RouteSettings settings);
