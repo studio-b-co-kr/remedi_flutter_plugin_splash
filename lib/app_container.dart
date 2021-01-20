@@ -1,6 +1,3 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
@@ -13,10 +10,6 @@ class AppContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (app.navigatorObservers != null) {
-      app.navigatorObservers
-          .add(FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()));
-    }
     return app;
   }
 }
