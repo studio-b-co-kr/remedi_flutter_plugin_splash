@@ -1,2 +1,1 @@
-# remedi_flutter_base
- 
+# Remedi Flutter Base project
