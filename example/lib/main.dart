@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
-import 'example_app.dart';
 import 'app_routes.dart' as routes;
 import 'app_theme.dart' as appTheme;
+import 'example_app.dart';
 
 void main() async {
   runApp(ExampleApp(
@@ -11,6 +11,7 @@ void main() async {
     generateInitialRoutes: MaterialPageRoute(
       builder: (context) => SplashPage(
         viewModel: SplashViewModel(),
+        view: SplashView(),
       ),
     ),
     initialRoute: SplashPage.ROUTE_NAME,

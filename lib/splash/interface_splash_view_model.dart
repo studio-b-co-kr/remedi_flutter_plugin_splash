@@ -1,5 +1,3 @@
-import 'interface_splash_repository.dart';
-
-abstract class ISplashViewModel {
+abstract class ISplashViewModel<ISplashRepository> {
   ISplashRepository get repository;
 }

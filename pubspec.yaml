@@ -15,6 +15,7 @@ dependencies:
   flutter_clean_arch:
     git:
       url: https://github.com/wooxist/flutter-clean-architecture.git
+      ref: master
 
 dev_dependencies:
   flutter_test:

@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
 import 'home_view.dart';
+import 'home_view_model.dart';
 
-class HomePage extends BasePage {
+class HomePage extends BasePage<HomeViewState, HomeViewModel> {
   static const ROUTE_NAME = "/home";
 
   @override
-  BaseView<BaseViewModel> buildView(BuildContext buildContext) {
+  BindingView<BaseViewModel> buildView(BuildContext buildContext) {
     return HomeView();
   }
 
   @override
-  Future loggingOpen() async {}
+  String get screenName => "home";
 
   @override
-  String get screenName => "home";
+  Future logScreenOpen() async {}
 }
