@@ -24,4 +24,10 @@ class SplashRepository implements ISplashRepository {
     await Future.delayed(Duration(seconds: 1));
     return true;
   }
+
+  @override
+  Future init() async {
+    // TODO create app id, get app metadata, 
+    await Future.delayed(Duration(seconds: 1));
+  }
 }
