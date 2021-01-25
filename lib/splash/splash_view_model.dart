@@ -1,16 +1,11 @@
 import 'package:flutter_clean_arch/clean_architecture.dart';
-import 'package:remedi_flutter_base/splash/interface_splash_view_model.dart';
 
-class SplashViewModel<ISplashRepository> extends BaseViewModel<SplashState>
-    implements ISplashViewModel {
+import 'interface_splash_repository.dart';
+import 'interface_splash_view_model.dart';
+
+class SplashViewModel extends ISplashViewModel {
+  SplashViewModel({ISplashRepository repository}) : super(repository:repository);
+
   @override
-  get initState => SplashState.Init;
-
-  @override
-  // TODO: implement repository
-  ISplashRepository get repository => throw UnimplementedError();
-}
-
-enum SplashState {
-  Init,
+  get initState => SplashViewState.Init;
 }

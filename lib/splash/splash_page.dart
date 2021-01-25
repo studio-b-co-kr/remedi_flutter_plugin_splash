@@ -5,7 +5,8 @@ import 'package:remedi_flutter_base/splash/splash_view_model.dart';
 
 import 'splash_view.dart';
 
-class SplashPage extends BasePage<SplashState, SplashViewModel> {
+class SplashPage
+    extends BasePage<SplashViewState, ISplashRepository, ISplashViewModel> {
   static const ROUTE_NAME = "/";
 
   static Route<dynamic> route(RouteSettings settings) {
@@ -36,7 +37,7 @@ class SplashPage extends BasePage<SplashState, SplashViewModel> {
 
   @override
   Future logScreenOpen() async {}
+
   @override
-  onListen(BuildContext context, SplashState state) {
-  }
+  onListen(BuildContext context, SplashViewState state) {}
 }

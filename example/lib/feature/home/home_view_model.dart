@@ -1,10 +1,6 @@
-import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:example/viewmodel/i_home_viewmodel.dart';
 
-class HomeViewModel extends BaseViewModel<HomeViewState> {
+class HomeViewModel extends IHomeViewModel {
   @override
   get initState => HomeViewState.Init;
-}
-
-enum HomeViewState {
-  Init,
 }

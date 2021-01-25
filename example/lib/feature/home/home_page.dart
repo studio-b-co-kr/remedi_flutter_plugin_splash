@@ -1,16 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:example/repository/i_home_repository.dart';
+import 'package:example/viewmodel/i_home_viewmodel.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
-import 'home_view.dart';
-import 'home_view_model.dart';
-
-class HomePage extends BasePage<HomeViewState, HomeViewModel> {
+class HomePage
+    extends BasePage<HomeViewState, IHomeRepository, IHomeViewModel> {
   static const ROUTE_NAME = "/home";
 
-  @override
-  BindingView<BaseViewModel> buildView(BuildContext buildContext) {
-    return HomeView();
-  }
+
 
   @override
   String get screenName => "home";

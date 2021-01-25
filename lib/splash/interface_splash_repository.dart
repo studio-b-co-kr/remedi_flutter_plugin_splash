@@ -1,4 +1,4 @@
-import 'package:remedi_flutter_base/repository/base_repository.dart';
+import 'package:flutter_clean_arch/clean_architecture.dart';
 
 abstract class ISplashRepository extends BaseRepository {
   Future<bool> donePermissionGrant();

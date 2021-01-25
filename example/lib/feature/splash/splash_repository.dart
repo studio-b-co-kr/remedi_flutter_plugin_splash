@@ -1,6 +1,6 @@
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
-class SplashRepository extends ISplashRepository {
+class SplashRepository implements ISplashRepository {
   @override
   Future<bool> doneIntro() async {
     await Future.delayed(Duration(seconds: 1));
