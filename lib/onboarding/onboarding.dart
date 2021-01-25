@@ -1,1 +1,1 @@
-export 'onboarding_ui.dart';
+export '../ui/onboarding_ui.dart';

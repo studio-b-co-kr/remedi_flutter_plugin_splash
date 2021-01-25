@@ -1,3 +1,3 @@
 export 'login_manager.dart';
-export 'login_repository.dart';
-export 'login_ui.dart';
+export '../repository/i_login_repository.dart';
+export '../ui/login_ui.dart';

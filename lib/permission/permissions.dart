@@ -1,1 +1,1 @@
-export 'permission_ui.dart';
+export '../ui/permission_ui.dart';

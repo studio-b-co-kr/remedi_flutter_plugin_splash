@@ -6,8 +6,6 @@ class HomePage
     extends BasePage<HomeViewState, IHomeRepository, IHomeViewModel> {
   static const ROUTE_NAME = "/home";
 
-
-
   @override
   String get screenName => "home";
 
