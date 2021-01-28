@@ -1,3 +1,4 @@
+import 'package:example/feature/splash/splash_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
@@ -10,8 +11,7 @@ void main() async {
     generateRoutes: routes.generateRoute,
     generateInitialRoutes: MaterialPageRoute(
       builder: (context) => SplashPage(
-        viewModel: SplashViewModel(),
-        view: SplashView(),
+        viewModel: SplashViewModel(repository: SplashRepository()),
       ),
     ),
     initialRoute: SplashPage.ROUTE_NAME,

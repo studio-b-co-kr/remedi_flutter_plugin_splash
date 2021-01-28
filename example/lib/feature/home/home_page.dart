@@ -1,9 +1,10 @@
-import 'package:example/repository/i_home_repository.dart';
 import 'package:example/viewmodel/i_home_viewmodel.dart';
+import 'package:flutter/widgets.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
-class HomePage
-    extends BasePage<HomeViewState, IHomeRepository, IHomeViewModel> {
+import 'home_view.dart';
+
+class HomePage extends BasePage<IHomeViewModel> {
   static const ROUTE_NAME = "/home";
 
   @override
@@ -11,4 +12,10 @@ class HomePage
 
   @override
   Future logScreenOpen() async {}
+
+  @override
+  BindingView<IHomeViewModel> body(
+      BuildContext context, IHomeViewModel viewModel, Widget child) {
+    return HomeView();
+  }
 }

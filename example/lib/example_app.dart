@@ -20,14 +20,18 @@ class ExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<NavigatorState> navigatorKey =
+        new GlobalKey<NavigatorState>();
     return AppContainer(
       appManager: AppManager(
-          logoBrand: AppImages.brandLogo, logoCompany: AppImages.companyLogo),
+          navigatorKey: navigatorKey,
+          logoBrand: AppImages.brandLogo,
+          logoCompany: AppImages.companyLogo),
       app: MaterialApp(
         theme: theme,
+        navigatorKey: navigatorKey,
         onGenerateRoute: (settings) => generateRoutes(settings),
         initialRoute: this.initialRoute,
-        onGenerateInitialRoutes: (initialRouteName) => [generateInitialRoutes],
       ),
     );
   }

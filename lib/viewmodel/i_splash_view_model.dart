@@ -5,14 +5,30 @@ abstract class ISplashViewModel
   ISplashViewModel({ISplashRepository repository})
       : super(repository: repository);
 
-  init();
+  appOpen();
+
+  afterInit();
+
+  afterForceUpdate();
+
+  afterIntro();
+
+  afterPermission();
+
+  afterLogin();
+
+  // Ready to show main contents.
+  readyToService();
 }
 
 enum SplashViewState {
-  Init,
+  AppOpen,
+  ForceUpdate,
+  Intro,
+  Permission,
   Login,
   Onboarding,
-  Permission,
-  Intro,
+  ReadyToService,
+  GoHome,
   Error,
 }
