@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_arch/clean_architecture.dart';
 import 'package:multiscreen/multiscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:remedi_flutter_base/app_manager.dart';
 import 'package:remedi_flutter_base/viewmodel/i_splash_view_model.dart';
+import 'package:stacked_mvvm/stacked_mvvm.dart';
 
 class SplashView extends BindingView<ISplashViewModel> {
   @override
@@ -18,7 +18,7 @@ class SplashView extends BindingView<ISplashViewModel> {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Spacer(flex: 1),
             Image.asset(
-              "${Provider.of<AppManager>(buildContext).logoBrand}",
+              "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
               width: resize(200),
             ),
             Expanded(
@@ -61,7 +61,7 @@ class SplashView extends BindingView<ISplashViewModel> {
               ]),
             ),
             Image.asset(
-              "${Provider.of<AppManager>(buildContext).logoBrand}",
+              "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
               width: resize(100),
             ),
             SizedBox(height: resize(16)),

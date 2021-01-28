@@ -4,8 +4,10 @@ import '../repository/i_splash_repository.dart';
 import '../viewmodel/i_splash_view_model.dart';
 
 class SplashViewModel extends ISplashViewModel {
-  SplashViewModel({ISplashRepository repository})
-      : super(repository: repository);
+  final ISplashRepository repo;
+
+  SplashViewModel({this.repo}) : assert(repo != null);
+
   AppError _error;
 
   @override
@@ -19,11 +21,10 @@ class SplashViewModel extends ISplashViewModel {
       return;
     }
 
-    afterInit();
+    afterAppOpen();
   }
 
-  afterInit() async {
-    // TODO check force update
+  afterAppOpen() async {
     var ret = await repository.needToUpdate();
 
     if (ret is AppError || !ret) {
@@ -96,4 +97,7 @@ class SplashViewModel extends ISplashViewModel {
 
   @override
   get initState => SplashViewState.AppOpen;
+
+  @override
+  ISplashRepository get repository => repo;
 }

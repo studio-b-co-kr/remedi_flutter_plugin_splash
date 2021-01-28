@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
-import 'package:remedi_flutter_base/splash/splash_view_model.dart';
 import 'package:remedi_flutter_base/ui/splash_ui.dart';
 import 'package:remedi_flutter_base/viewmodel/i_splash_view_model.dart';
 
@@ -9,21 +8,12 @@ import 'splash_view.dart';
 class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
   static const ROUTE_NAME = "/";
 
-  static Route<dynamic> route(
-      RouteSettings settings, ISplashRepository repository) {
-    return MaterialPageRoute(
-      settings: settings,
-      builder: (context) =>
-          SplashPage(viewModel: SplashViewModel(repository: repository)),
-    );
-  }
-
   final String forceUpdatePageRouteName;
   final String permissionPageRouteName;
   final String loginPageRouteName;
   final String introPageRouteName;
   final String onBoardingPageRouteName;
-  final String homePageRouteName;
+  final String contentsPageRouteName;
 
   SplashPage({
     Key key,
@@ -32,9 +22,10 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
     this.loginPageRouteName,
     this.introPageRouteName,
     this.onBoardingPageRouteName,
-    this.homePageRouteName,
+    this.contentsPageRouteName,
     ISplashViewModel viewModel,
-  }) : super(key: key, viewModel: viewModel);
+  })  : assert(contentsPageRouteName != null),
+        super(key: key, viewModel: viewModel);
 
   @override
   String get screenName => "splash";
@@ -96,7 +87,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
 
   @override
   goContentsPage(BuildContext buildContext) {
-    AppManager.navigator(buildContext).popAndPushNamed(this.homePageRouteName);
+    Navigator.of(buildContext).popAndPushNamed(this.contentsPageRouteName);
   }
 
   @override

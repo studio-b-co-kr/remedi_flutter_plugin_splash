@@ -31,6 +31,7 @@ class ExampleApp extends StatelessWidget {
         theme: theme,
         navigatorKey: navigatorKey,
         onGenerateRoute: (settings) => generateRoutes(settings),
+        // onGenerateInitialRoutes:(routeName) => [generateInitialRoutes],
         initialRoute: this.initialRoute,
       ),
     );

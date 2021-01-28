@@ -12,9 +12,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_clean_arch:
+  stacked_mvvm:
     git:
-      url: https://github.com/wooxist/flutter-clean-architecture.git
+      url: https://github.com/wooxist/stacked_mvvm.git
       ref: master
 
   multiscreen: ^1.3.0

@@ -1,4 +1,4 @@
-import 'package:flutter_clean_arch/clean_architecture.dart';
+import 'package:stacked_mvvm/stacked_mvvm.dart';
 
 abstract class ISplashRepository extends BaseRepository {
   Future<dynamic> init();

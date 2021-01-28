@@ -13,5 +13,5 @@ class AppManager {
   });
 
   static NavigatorState navigator(BuildContext context) =>
-      Provider.of<AppManager>(context).navigatorKey.currentState;
+      Provider.of<AppManager>(context, listen: false).navigatorKey.currentState;
 }
