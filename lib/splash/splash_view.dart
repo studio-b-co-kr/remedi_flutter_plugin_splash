@@ -25,7 +25,15 @@ class SplashView extends BindingView<ISplashViewModel> {
               child: Column(children: [
                 Spacer(flex: 1),
                 viewModel.state == SplashViewState.Error
-                    ? Container()
+                    ? Container(
+                        child: Column(
+                          children: [
+                            Text("error message"),
+                            Text("errorCode:"),
+                            Text("${viewModel.error.stackTrace}"),
+                          ],
+                        ),
+                      )
                     : Container(
                         width: resize(40),
                         height: resize(40),

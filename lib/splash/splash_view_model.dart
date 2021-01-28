@@ -4,12 +4,17 @@ import '../viewmodel/i_splash_view_model.dart';
 class SplashViewModel extends ISplashViewModel {
   SplashViewModel({ISplashRepository repository})
       : super(repository: repository);
+  Error _error;
+
+  @override
+  Error get error => _error;
 
   appOpen() async {
     // TODO init app.
     var ret = await repository.init();
     ret = Error();
     if (ret is Error) {
+      _error = ret;
       update(state: SplashViewState.Error);
       return;
     }
@@ -32,6 +37,7 @@ class SplashViewModel extends ISplashViewModel {
     // TODO show intro
     var ret = await repository.doneIntro();
     if (ret is Error) {
+      _error = ret;
       update(state: SplashViewState.Error);
       return;
     }
@@ -77,9 +83,10 @@ class SplashViewModel extends ISplashViewModel {
 
   @override
   readyToService() async {
-    var ret = repository.readyService();
+    var ret = await repository.readyToService();
 
     if (ret is Error) {
+      _error = ret;
       return;
     }
 

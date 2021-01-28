@@ -2,25 +2,25 @@ import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 
 class SplashRepository implements ISplashRepository {
   @override
-  Future<bool> doneIntro() async {
+  Future<dynamic> doneIntro() async {
     await Future.delayed(Duration(seconds: 1));
     return true;
   }
 
   @override
-  Future<bool> doneOnboarding() async {
+  Future<dynamic> doneOnboarding() async {
     await Future.delayed(Duration(seconds: 1));
     return true;
   }
 
   @override
-  Future<bool> donePermissionGrant() async {
+  Future<dynamic> donePermissionGrant() async {
     await Future.delayed(Duration(seconds: 1));
     return true;
   }
 
   @override
-  Future<bool> isLoggedIn() async {
+  Future<dynamic> isLoggedIn() async {
     await Future.delayed(Duration(seconds: 1));
     return true;
   }
@@ -32,12 +32,12 @@ class SplashRepository implements ISplashRepository {
   }
 
   @override
-  Future<bool> needToUpdate() async {
+  Future<dynamic> needToUpdate() async {
     return false;
   }
 
   @override
-  Future<bool> readyService() async {
+  Future<dynamic> readyToService() async {
     return true;
   }
 }

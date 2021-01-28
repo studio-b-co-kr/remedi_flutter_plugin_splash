@@ -3,15 +3,15 @@ import 'package:flutter_clean_arch/clean_architecture.dart';
 abstract class ISplashRepository extends BaseRepository {
   Future<dynamic> init();
 
-  Future<bool> needToUpdate();
+  Future<dynamic> needToUpdate();
 
-  Future<bool> donePermissionGrant();
+  Future<dynamic> donePermissionGrant();
 
-  Future<bool> doneIntro();
+  Future<dynamic> doneIntro();
 
-  Future<bool> isLoggedIn();
+  Future<dynamic> isLoggedIn();
 
-  Future<bool> doneOnboarding();
+  Future<dynamic> doneOnboarding();
 
-  Future<bool> readyService();
+  Future<dynamic> readyToService();
 }

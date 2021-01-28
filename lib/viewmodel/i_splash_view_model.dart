@@ -19,6 +19,8 @@ abstract class ISplashViewModel
 
   // Ready to show main contents.
   readyToService();
+
+  Error get error;
 }
 
 enum SplashViewState {
