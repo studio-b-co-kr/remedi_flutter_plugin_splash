@@ -1,23 +1,24 @@
+import 'package:remedi_flutter_base/error/app_error.dart';
+
 import '../repository/i_splash_repository.dart';
 import '../viewmodel/i_splash_view_model.dart';
 
 class SplashViewModel extends ISplashViewModel {
   SplashViewModel({ISplashRepository repository})
       : super(repository: repository);
-  Error _error;
+  AppError _error;
 
   @override
-  Error get error => _error;
+  AppError get error => _error;
 
   appOpen() async {
-    // TODO init app.
     var ret = await repository.init();
-    ret = Error();
-    if (ret is Error) {
+    if (ret is AppError) {
       _error = ret;
       update(state: SplashViewState.Error);
       return;
     }
+
     afterInit();
   }
 
@@ -25,7 +26,7 @@ class SplashViewModel extends ISplashViewModel {
     // TODO check force update
     var ret = await repository.needToUpdate();
 
-    if (ret is Error || !ret) {
+    if (ret is AppError || !ret) {
       afterForceUpdate();
       return;
     }
@@ -36,7 +37,7 @@ class SplashViewModel extends ISplashViewModel {
   afterForceUpdate() async {
     // TODO show intro
     var ret = await repository.doneIntro();
-    if (ret is Error) {
+    if (ret is AppError) {
       _error = ret;
       update(state: SplashViewState.Error);
       return;
@@ -85,12 +86,12 @@ class SplashViewModel extends ISplashViewModel {
   readyToService() async {
     var ret = await repository.readyToService();
 
-    if (ret is Error) {
+    if (ret is AppError) {
       _error = ret;
       return;
     }
 
-    update(state: SplashViewState.GoHome);
+    update(state: SplashViewState.GoContentsPage);
   }
 
   @override

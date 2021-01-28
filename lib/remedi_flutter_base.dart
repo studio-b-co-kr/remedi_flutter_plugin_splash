@@ -12,5 +12,6 @@ export 'onboarding/onboarding.dart';
 export 'permission/permissions.dart';
 export 'repository/repository.dart';
 export 'splash/splash.dart';
+export 'error/app_error.dart';
 
 typedef Route<dynamic> GenerateRoutes(RouteSettings settings);

@@ -88,14 +88,14 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         break;
       case SplashViewState.ReadyToService:
         break;
-      case SplashViewState.GoHome:
-        goHome(context);
+      case SplashViewState.GoContentsPage:
+        goContentsPage(context);
         break;
     }
   }
 
   @override
-  goHome(BuildContext buildContext) {
+  goContentsPage(BuildContext buildContext) {
     AppManager.navigator(buildContext).popAndPushNamed(this.homePageRouteName);
   }
 

@@ -20,7 +20,7 @@ abstract class ISplashViewModel
   // Ready to show main contents.
   readyToService();
 
-  Error get error;
+  AppError get error;
 }
 
 enum SplashViewState {
@@ -31,6 +31,6 @@ enum SplashViewState {
   Login,
   Onboarding,
   ReadyToService,
-  GoHome,
+  GoContentsPage,
   Error,
 }

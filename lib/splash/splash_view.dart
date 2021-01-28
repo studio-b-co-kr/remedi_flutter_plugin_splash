@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_arch/clean_architecture.dart';
 import 'package:multiscreen/multiscreen.dart';
@@ -26,11 +27,28 @@ class SplashView extends BindingView<ISplashViewModel> {
                 Spacer(flex: 1),
                 viewModel.state == SplashViewState.Error
                     ? Container(
-                        child: Column(
+                        padding: EdgeInsets.all(16),
+                        color: Colors.grey.shade200,
+                        width: resize(320),
+                        child: ListView(
+                          shrinkWrap: true,
                           children: [
-                            Text("error message"),
-                            Text("errorCode:"),
-                            Text("${viewModel.error.stackTrace}"),
+                            Text(
+                              "${viewModel.error.title} (code : ${viewModel.error.code})",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              "${viewModel.error.message}",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            SizedBox(height: 8),
+                            kReleaseMode
+                                ? Container()
+                                : Text(
+                                    "${viewModel.error.stackTrace}",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
                           ],
                         ),
                       )
