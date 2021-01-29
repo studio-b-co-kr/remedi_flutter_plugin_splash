@@ -26,7 +26,7 @@ class AppConfig {
   static String userAgent;
 
   // set device info.
-  static init() async {
+  static Future init() async {
     return await Future.wait([
       setAdId(),
       setPackageInfo(),
