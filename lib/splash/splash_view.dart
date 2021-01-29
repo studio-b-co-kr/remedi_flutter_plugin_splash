@@ -61,7 +61,7 @@ class SplashView extends BindingView<ISplashViewModel> {
               ]),
             ),
             Image.asset(
-              "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
+              "${Provider.of<AppManager>(buildContext, listen: false).logoCompany}",
               width: resize(100),
             ),
             SizedBox(height: resize(16)),

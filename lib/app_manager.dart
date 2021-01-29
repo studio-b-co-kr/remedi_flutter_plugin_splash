@@ -10,7 +10,9 @@ class AppManager {
     this.logoBrand,
     this.logoCompany,
     this.navigatorKey,
-  });
+  })  : assert(logoBrand != null),
+        assert(logoCompany != null),
+        assert(navigatorKey != null);
 
   static NavigatorState navigator(BuildContext context) =>
       Provider.of<AppManager>(context, listen: false).navigatorKey.currentState;
