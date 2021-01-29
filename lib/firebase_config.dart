@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -20,12 +22,12 @@ class FirebaseConfig {
           .setAnalyticsCollectionEnabled(AppConfig.isRelease));
     }
 
-    if (enableCrashlytics) {
+    if (enablePerformance) {
       works.add(
           FirebasePerformance.instance.setPerformanceCollectionEnabled(true));
     }
 
-    if (enablePerformance) {
+    if (enableCrashlytics) {
       works.add(FirebaseCrashlytics.instance
           .setCrashlyticsCollectionEnabled(AppConfig.isRelease));
     }
@@ -38,7 +40,9 @@ class FirebaseConfig {
       } else {
         FlutterError.onError = (FlutterErrorDetails details) {
           FlutterError.dumpErrorToConsole(details);
-          // exit(1);
+          if (!AppConfig.isRelease) {
+            exit(1);
+          }
         };
       }
     }

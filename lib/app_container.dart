@@ -1,5 +1,7 @@
 import 'dart:developer' as dev;
 
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
@@ -9,16 +11,22 @@ import 'app_manager.dart';
 class AppContainer extends StatelessWidget with WidgetsBindingObserver {
   final MaterialApp app;
   final AppManager appManager;
+  final bool firebaseAnalyticsOn;
 
-  AppContainer({Key key, this.app, this.appManager})
+  AppContainer({Key key, this.app, this.appManager, this.firebaseAnalyticsOn})
       : assert(app != null),
         assert(appManager != null),
+        assert(firebaseAnalyticsOn != null),
         super(key: key) {
     WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   Widget build(BuildContext context) {
+    if (firebaseAnalyticsOn) {
+      app.navigatorObservers
+          .add(FirebaseAnalyticsObserver(analytics: FirebaseAnalytics()));
+    }
     return Provider<AppManager>(
       create: (_) => appManager,
       child: app,
