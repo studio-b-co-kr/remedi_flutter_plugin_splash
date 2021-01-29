@@ -32,7 +32,7 @@ class SplashRepository implements ISplashRepository {
   }
 
   @override
-  Future<dynamic> needToUpdate() async {
+  Future<bool> needToUpdate() async {
     return false;
   }
 

@@ -36,7 +36,6 @@ class SplashViewModel extends ISplashViewModel {
   }
 
   afterForceUpdate() async {
-    // TODO show intro
     var ret = await repository.doneIntro();
     if (ret is AppError) {
       _error = ret;
@@ -93,6 +92,10 @@ class SplashViewModel extends ISplashViewModel {
     }
 
     update(state: SplashViewState.GoContentsPage);
+  }
+
+  showError(AppError error) {
+    update(state: SplashViewState.Error);
   }
 
   @override

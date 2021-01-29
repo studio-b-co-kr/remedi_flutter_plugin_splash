@@ -17,6 +17,8 @@ abstract class ISplashViewModel
   // Ready to show main contents.
   readyToService();
 
+  showError(AppError error);
+
   AppError get error;
 }
 
