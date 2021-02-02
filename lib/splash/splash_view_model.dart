@@ -6,13 +6,21 @@ import '../viewmodel/i_splash_view_model.dart';
 class SplashViewModel extends ISplashViewModel {
   final ISplashRepository repo;
 
-  SplashViewModel({this.repo}) : assert(repo != null);
-
+  SplashViewModel(String routeName, {this.repo})
+      : assert(repo != null),
+        super(routeName);
   AppError _error;
 
   @override
   AppError get error => _error;
 
+  init() {
+    switch(routeName) {
+
+    }
+  }
+
+  @override
   appOpen() async {
     var ret = await repository.init();
     if (ret is AppError) {
@@ -24,6 +32,7 @@ class SplashViewModel extends ISplashViewModel {
     afterAppOpen();
   }
 
+  @override
   afterAppOpen() async {
     var ret = await repository.needToUpdate();
 
@@ -35,6 +44,7 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.ForceUpdate);
   }
 
+  @override
   afterForceUpdate() async {
     var ret = await repository.doneIntro();
     if (ret is AppError) {
@@ -51,6 +61,7 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.Intro);
   }
 
+  @override
   afterIntro() async {
     var ret = await repository.donePermissionGrant();
     if (ret != null && ret) {
@@ -61,6 +72,7 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.Permission);
   }
 
+  @override
   afterPermission() async {
     var ret = await repository.isLoggedIn();
     if (ret != null && ret) {
@@ -75,11 +87,16 @@ class SplashViewModel extends ISplashViewModel {
   afterLogin() async {
     var ret = await repository.doneOnboarding();
     if (ret != null && ret) {
-      readyToService();
+      afterOnboarding();
       return;
     }
 
     update(state: SplashViewState.Login);
+  }
+
+  @override
+  afterOnboarding() async {
+    readyToService();
   }
 
   @override
@@ -99,7 +116,7 @@ class SplashViewModel extends ISplashViewModel {
   }
 
   @override
-  get initState => SplashViewState.AppOpen;
+  get initState => SplashViewState.Init;
 
   @override
   ISplashRepository get repository => repo;

@@ -8,12 +8,13 @@ GenerateRoutes generateRoute =
     (RouteSettings settings, {Stream<Map<dynamic, dynamic>> deepLinkStream}) {
   Route<dynamic> ret;
   switch (settings.name) {
-    case SplashPage.ROUTE_NAME:
+    case SplashPage.ROUTE_NAME_APP_OPEN:
       ret = MaterialPageRoute(
         settings: settings,
         builder: (context) => SplashPage(
             contentsPageRouteName: HomePage.ROUTE_NAME,
-            viewModel: SplashViewModel(repo: SplashRepository())),
+            viewModel:
+                SplashViewModel(settings.name, repo: SplashRepository())),
       );
 
       break;

@@ -6,7 +6,11 @@ import 'package:remedi_flutter_base/viewmodel/i_splash_view_model.dart';
 import 'splash_view.dart';
 
 class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
-  static const ROUTE_NAME = "/";
+  static const ROUTE_NAME_APP_OPEN = "/";
+  static const ROUTE_NAME_AFTER_INTRO = "/after_intro";
+  static const ROUTE_NAME_AFTER_PERMISSION = "/after_permission";
+  static const ROUTE_NAME_AFTER_LOGIN = "/after_login";
+  static const ROUTE_NAME_AFTER_ONBOARDING = "/after_onboarding";
 
   final String forceUpdatePageRouteName;
   final String permissionPageRouteName;
@@ -37,12 +41,32 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
   onListen(BuildContext context, ISplashViewModel viewModel) async {
     super.onListen(context, viewModel);
     switch (viewModel.state) {
+      // case SplashViewState.Init:
+      //   switch (routeName) {
+      //     case ROUTE_NAME_APP_OPEN:
+      //       viewModel.appOpen();
+      //       break;
+      //     case ROUTE_NAME_AFTER_INTRO:
+      //       viewModel.afterIntro();
+      //       break;
+      //     case ROUTE_NAME_AFTER_PERMISSION:
+      //       viewModel.afterPermission();
+      //       break;
+      //     case ROUTE_NAME_AFTER_LOGIN:
+      //       viewModel.afterLogin();
+      //       break;
+      //     case ROUTE_NAME_AFTER_ONBOARDING:
+      //       viewModel.afterOnboarding();
+      //       break;
+      //   }
+      //   break;
       case SplashViewState.AppOpen:
         viewModel.appOpen();
         break;
       case SplashViewState.Login:
         if (loginPageRouteName != null && loginPageRouteName.contains('/')) {
-          var ret = await Navigator.of(context).pushReplacementNamed(loginPageRouteName);
+          var ret = await Navigator.of(context)
+              .pushReplacementNamed(loginPageRouteName);
           if (ret == null) {
             Navigator.pop(context);
             return;
