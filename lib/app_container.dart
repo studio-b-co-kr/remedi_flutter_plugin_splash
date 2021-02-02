@@ -1,6 +1,5 @@
 import 'dart:developer' as dev;
 
-import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
@@ -11,8 +10,7 @@ class AppContainer extends StatelessWidget with WidgetsBindingObserver {
   final MaterialApp app;
   final AppManager appManager;
 
-  AppContainer(
-      {Key key, this.app, this.appManager})
+  AppContainer({Key key, this.app, this.appManager})
       : assert(app != null),
         assert(appManager != null),
         super(key: key) {
@@ -22,9 +20,7 @@ class AppContainer extends StatelessWidget with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Provider<AppManager>(
-      create: (_) => appManager,
-      child: app,
-    );
+        create: (_) => appManager, builder: (buildContext, widget) => app);
   }
 
   @override
