@@ -35,6 +35,11 @@ dependencies:
   # save app contexts (uuid and etc)
   flutter_secure_storage: ^3.3.5
 
+  # http
+  dio: ^3.0.10
+  dio_flutter_transformer: ^3.0.2
+  dio_firebase_performance: ^0.2.0
+
   # firebase
   firebase_core: ^0.5.3
   firebase_analytics: ^6.3.0
