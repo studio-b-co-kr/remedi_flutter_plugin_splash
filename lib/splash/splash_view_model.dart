@@ -2,6 +2,7 @@ import 'package:remedi_flutter_base/error/app_error.dart';
 
 import '../repository/i_splash_repository.dart';
 import '../viewmodel/i_splash_view_model.dart';
+import 'splash_page.dart';
 
 class SplashViewModel extends ISplashViewModel {
   final ISplashRepository repo;
@@ -15,8 +16,22 @@ class SplashViewModel extends ISplashViewModel {
   AppError get error => _error;
 
   init() {
-    switch(routeName) {
-
+    switch (routeName) {
+      case SplashPage.ROUTE_NAME_APP_OPEN:
+        appOpen();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_INTRO:
+        afterIntro();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_PERMISSION:
+        afterPermission();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_LOGIN:
+        afterLogin();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_ONBOARDING:
+        afterOnboarding();
+        break;
     }
   }
 
