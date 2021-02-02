@@ -17,7 +17,6 @@ class AppPreferences {
       try {
         uuid = await UniqueIds.uuid;
       } on PlatformException {
-        // logging crashlytics
         return "";
       }
       await _storage.write(key: _KEY_APP_ID, value: uuid);

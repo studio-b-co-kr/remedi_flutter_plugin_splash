@@ -42,7 +42,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         break;
       case SplashViewState.Login:
         if (loginPageRouteName != null && loginPageRouteName.contains('/')) {
-          var ret = await Navigator.of(context).pushNamed(loginPageRouteName);
+          var ret = await Navigator.of(context).pushReplacementNamed(loginPageRouteName);
           if (ret == null) {
             Navigator.pop(context);
             return;

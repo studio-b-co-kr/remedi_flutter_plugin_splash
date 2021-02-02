@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:device_info/device_info.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'package:package_info/package_info.dart';
@@ -115,6 +116,10 @@ class AppConfig {
       userAgent = await FlutterUserAgent.getPropertyAsync('userAgent');
     } catch (e) {}
   }
+
+  static Future<String> get appId => AppPreferences.instance.appId;
+
+  static Future<String> get fcmToken => FirebaseMessaging().getToken();
 
   static void log() async {
     dev.log(baseUrl, name: "baseUrl");
