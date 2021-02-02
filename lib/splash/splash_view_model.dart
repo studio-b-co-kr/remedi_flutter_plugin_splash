@@ -17,9 +17,6 @@ class SplashViewModel extends ISplashViewModel {
 
   init() {
     switch (routeName) {
-      case SplashPage.ROUTE_NAME_APP_OPEN:
-        appOpen();
-        break;
       case SplashPage.ROUTE_NAME_AFTER_INTRO:
         afterIntro();
         break;
@@ -31,6 +28,10 @@ class SplashViewModel extends ISplashViewModel {
         break;
       case SplashPage.ROUTE_NAME_AFTER_ONBOARDING:
         afterOnboarding();
+        break;
+      case SplashPage.ROUTE_NAME_APP_OPEN:
+      default:
+        appOpen();
         break;
     }
   }
