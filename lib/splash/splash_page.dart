@@ -87,6 +87,8 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
       case SplashViewState.GoContentsPage:
         goContentsPage(context);
         break;
+      case SplashViewState.Init:
+        break;
     }
   }
 
