@@ -12,8 +12,6 @@ abstract class IAuthViewModel
   loginWithKakao();
 
   loginWithApple();
-
-  login();
 }
 
 enum LoginViewState {
