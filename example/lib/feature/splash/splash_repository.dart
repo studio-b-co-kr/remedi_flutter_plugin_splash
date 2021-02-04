@@ -1,4 +1,5 @@
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:remedi_flutter_base/repository/i_splash_repository.dart';
 
 class SplashRepository implements ISplashRepository {
   @override
