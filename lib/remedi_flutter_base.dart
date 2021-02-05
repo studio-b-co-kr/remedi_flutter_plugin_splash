@@ -13,5 +13,6 @@ export 'error/app_error.dart';
 export 'feature/splash/splash.dart';
 export 'repository/repository.dart';
 export 'view_model/view_model.dart';
+export 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
 
 typedef Route<dynamic> GenerateRoutes(RouteSettings settings);
