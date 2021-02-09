@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 import 'package:remedi_flutter_base/ui/splash_ui.dart';
-import 'package:remedi_flutter_base/viewmodel/i_splash_view_model.dart';
+import 'package:remedi_flutter_base/view_model/view_model.dart';
 
 import 'splash_view.dart';
 
 class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
-  static const ROUTE_NAME = "/";
+  static const ROUTE_NAME_APP_OPEN = "/";
+  static const ROUTE_NAME_AFTER_INTRO = "/after_intro";
+  static const ROUTE_NAME_AFTER_PERMISSION = "/after_permission";
+  static const ROUTE_NAME_AFTER_LOGIN = "/after_login";
+  static const ROUTE_NAME_AFTER_ONBOARDING = "/after_onboarding";
 
   final String forceUpdatePageRouteName;
   final String permissionPageRouteName;
@@ -38,23 +42,13 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
     super.onListen(context, viewModel);
     switch (viewModel.state) {
       case SplashViewState.AppOpen:
-        viewModel.appOpen();
         break;
       case SplashViewState.Login:
         if (loginPageRouteName != null && loginPageRouteName.contains('/')) {
-          var ret = await Navigator.of(context).pushNamed(loginPageRouteName);
-
-          if (ret == null) {
-            return;
-          }
-
-          if (ret != null && ret) {
-            return;
-          }
+          Navigator.of(context).pushReplacementNamed(loginPageRouteName);
+          return;
         }
-
         viewModel.afterLogin();
-
         break;
       case SplashViewState.Onboarding:
         if (onBoardingPageRouteName != null &&
@@ -92,6 +86,8 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         break;
       case SplashViewState.GoContentsPage:
         goContentsPage(context);
+        break;
+      case SplashViewState.Init:
         break;
     }
   }

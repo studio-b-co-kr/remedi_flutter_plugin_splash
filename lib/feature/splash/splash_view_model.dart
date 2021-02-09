@@ -1,18 +1,41 @@
 import 'package:remedi_flutter_base/error/app_error.dart';
 
-import '../repository/i_splash_repository.dart';
-import '../viewmodel/i_splash_view_model.dart';
+import '../../remedi_flutter_base.dart';
+import 'splash_page.dart';
 
 class SplashViewModel extends ISplashViewModel {
   final ISplashRepository repo;
 
-  SplashViewModel({this.repo}) : assert(repo != null);
-
+  SplashViewModel(String routeName, {this.repo})
+      : assert(repo != null),
+        super(routeName);
   AppError _error;
 
   @override
   AppError get error => _error;
 
+  init() {
+    switch (routeName) {
+      case SplashPage.ROUTE_NAME_AFTER_INTRO:
+        afterIntro();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_PERMISSION:
+        afterPermission();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_LOGIN:
+        afterLogin();
+        break;
+      case SplashPage.ROUTE_NAME_AFTER_ONBOARDING:
+        afterOnboarding();
+        break;
+      case SplashPage.ROUTE_NAME_APP_OPEN:
+      default:
+        appOpen();
+        break;
+    }
+  }
+
+  @override
   appOpen() async {
     var ret = await repository.init();
     if (ret is AppError) {
@@ -24,6 +47,7 @@ class SplashViewModel extends ISplashViewModel {
     afterAppOpen();
   }
 
+  @override
   afterAppOpen() async {
 
     var ret = await repository.needToUpdate();
@@ -36,8 +60,8 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.ForceUpdate);
   }
 
+  @override
   afterForceUpdate() async {
-    // TODO show intro
     var ret = await repository.doneIntro();
     if (ret is AppError) {
       _error = ret;
@@ -53,6 +77,7 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.Intro);
   }
 
+  @override
   afterIntro() async {
     var ret = await repository.donePermissionGrant();
     if (ret != null && ret) {
@@ -63,6 +88,7 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.Permission);
   }
 
+  @override
   afterPermission() async {
     var ret = await repository.isLoggedIn();
     if (ret != null && ret) {
@@ -77,11 +103,16 @@ class SplashViewModel extends ISplashViewModel {
   afterLogin() async {
     var ret = await repository.doneOnboarding();
     if (ret != null && ret) {
-      readyToService();
+      afterOnboarding();
       return;
     }
 
     update(state: SplashViewState.Login);
+  }
+
+  @override
+  afterOnboarding() async {
+    readyToService();
   }
 
   @override
@@ -96,8 +127,12 @@ class SplashViewModel extends ISplashViewModel {
     update(state: SplashViewState.GoContentsPage);
   }
 
+  showError(AppError error) {
+    update(state: SplashViewState.Error);
+  }
+
   @override
-  get initState => SplashViewState.AppOpen;
+  get initState => SplashViewState.Init;
 
   @override
   ISplashRepository get repository => repo;

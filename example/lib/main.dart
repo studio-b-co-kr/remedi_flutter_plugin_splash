@@ -13,7 +13,7 @@ void main() async {
     //     viewModel: SplashViewModel(repo: SplashRepository()),
     //   ),
     // ),
-    initialRoute: SplashPage.ROUTE_NAME,
+    initialRoute: SplashPage.ROUTE_NAME_APP_OPEN,
     theme: appTheme.appTheme,
   ));
 }

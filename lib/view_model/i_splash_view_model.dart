@@ -1,7 +1,13 @@
+import 'package:remedi_flutter_base/repository/i_splash_repository.dart';
+
 import '../remedi_flutter_base.dart';
 
 abstract class ISplashViewModel
     extends BaseViewModel<SplashViewState, ISplashRepository> {
+  final String routeName;
+
+  ISplashViewModel(this.routeName);
+
   appOpen();
 
   afterAppOpen();
@@ -14,13 +20,18 @@ abstract class ISplashViewModel
 
   afterLogin();
 
+  afterOnboarding();
+
   // Ready to show main contents.
   readyToService();
+
+  showError(AppError error);
 
   AppError get error;
 }
 
 enum SplashViewState {
+  Init,
   AppOpen,
   ForceUpdate,
   Intro,

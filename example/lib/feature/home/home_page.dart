@@ -2,6 +2,7 @@ import 'package:example/viewmodel/i_home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:remedi_flutter_base/repository/i_splash_repository.dart';
 
 import 'home_view.dart';
 import 'home_view_model.dart';

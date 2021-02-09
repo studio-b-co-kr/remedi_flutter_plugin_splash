@@ -4,7 +4,8 @@ This documentation provides overview of how to prepare and build a new Flutter a
 
 ## Getting Started
 
-When creating a mobile app for a new Remedi project, first create Flutter app using standard flow, and then add basic functionality (e.g. Networking, State Management, Authentication, etc.) using corresponding modules.
+When creating a mobile app for a new Remedi project, first create Flutter app using standard flow, and then add basic
+functionality (e.g. Networking, State Management, Authentication, etc.) using corresponding modules.
 
 ### Android Package name / iOS Bundle ID naming convention
 
@@ -14,7 +15,8 @@ Steps to change, if already created:
 
 - Find and replace in VSCode
 - Change manually in Xcode: Runner > Targets > General > Bundle Identifier
-- Change manually in Android Studio: Android view > app > java > Show Options Menu > uncheck Compact Middle Packages > xxx.app_template > Refactor > Rename
+- Change manually in Android Studio: Android view > app > java > Show Options Menu > uncheck Compact Middle Packages >
+  xxx.app_template > Refactor > Rename
 
 ### App name
 
@@ -25,7 +27,8 @@ Steps to chage app name:
 
 ### Flavors
 
-Add `dev` and `prod` flavors to Android and iOS so that environment variables could be defined later for `kakao_app_key` and `branch_key`.
+Add `dev` and `prod` flavors to Android and iOS so that environment variables could be defined later for `kakao_app_key`
+and `branch_key`.
 
 Eventually dev app should be able to be run using following command:
 
@@ -39,14 +42,18 @@ flutter run --flavor=dev -t lib/main-dev.dart
 
 Find Signing Key hash and save it in Kakao Developer project's console in order to use Kakao Login.
 
-Debug hash could be found using following command `keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64`
-Release hash could be found using following command `keytool -exportcert -alias <release_key_alias> -keystore <release_keystore_path> | openssl sha1 -binary | openssl base64`
+Debug hash could be found using following
+command `keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64`
+Release hash could be found using following
+command `keytool -exportcert -alias <release_key_alias> -keystore <release_keystore_path> | openssl sha1 -binary | openssl base64`
 
 ### iOS specific configuration
 
 - Sign in with Apple
 
-Configure Sign in with Apple on Apple Developer website and add Sign in with Apple capability to Xcode. See [sign_in_with_apple Flutter package's](https://pub.dev/packages/sign_in_with_apple) Integration section for detailed flow.
+Configure Sign in with Apple on Apple Developer website and add Sign in with Apple capability to Xcode.
+See [sign_in_with_apple Flutter package's](https://pub.dev/packages/sign_in_with_apple) Integration section for detailed
+flow.
 
 ## Remedi custom modules
 

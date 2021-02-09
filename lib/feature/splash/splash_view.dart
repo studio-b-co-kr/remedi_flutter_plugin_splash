@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:multiscreen/multiscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:remedi_flutter_base/app_manager.dart';
-import 'package:remedi_flutter_base/viewmodel/i_splash_view_model.dart';
 import 'package:stacked_mvvm/stacked_mvvm.dart';
+
+import '../../remedi_flutter_base.dart';
 
 class SplashView extends BindingView<ISplashViewModel> {
   @override
@@ -61,7 +62,7 @@ class SplashView extends BindingView<ISplashViewModel> {
               ]),
             ),
             Image.asset(
-              "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
+              "${Provider.of<AppManager>(buildContext, listen: false).logoCompany}",
               width: resize(100),
             ),
             SizedBox(height: resize(16)),

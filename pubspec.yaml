@@ -17,7 +17,40 @@ dependencies:
       url: https://github.com/wooxist/stacked_mvvm.git
       ref: master
 
+  # multi-resolution support.
   multiscreen: ^1.3.0
+
+  # app version, build number and etc
+  package_info: ^0.4.3+2
+
+  # device info, os version, os type
+  device_info: ^1.0.0
+
+  # uuid generator and adid/idfa getter
+  unique_ids: ^1.0.11
+
+  # user-agent info.
+  flutter_user_agent: ^1.2.2
+
+  # save app contexts (uuid and etc)
+  flutter_secure_storage: ^3.3.5
+
+  # http
+  dio: ^3.0.10
+  dio_flutter_transformer: ^3.0.2
+  dio_firebase_performance: ^0.2.0
+
+  # firebase
+  firebase_core: ^0.5.3
+  firebase_analytics: ^6.3.0
+  firebase_performance: ^0.4.3
+  firebase_crashlytics: ^0.2.4
+  firebase_messaging: ^7.0.3
+  firebase_auth: ^0.18.4+1
+  #firebase_remote_config: ^0.4.3
+
+  # branch tracking and deep link
+  flutter_branch_sdk: ^1.3.3
 
 dev_dependencies:
   flutter_test:
