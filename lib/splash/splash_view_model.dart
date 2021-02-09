@@ -25,6 +25,7 @@ class SplashViewModel extends ISplashViewModel {
   }
 
   afterAppOpen() async {
+
     var ret = await repository.needToUpdate();
 
     if (ret is AppError || !ret) {
