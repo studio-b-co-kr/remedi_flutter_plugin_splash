@@ -5,6 +5,8 @@ import 'package:remedi_flutter_base/remedi_flutter_base.dart';
 class HomeView extends BindingView<IHomeViewModel> {
   @override
   Widget build(BuildContext context, IHomeViewModel viewModel) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.red,
+    );
   }
 }

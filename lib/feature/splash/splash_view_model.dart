@@ -49,6 +49,7 @@ class SplashViewModel extends ISplashViewModel {
 
   @override
   afterAppOpen() async {
+
     var ret = await repository.needToUpdate();
 
     if (ret is AppError || !ret) {
