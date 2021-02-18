@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:remedi_flutter_base/remedi_flutter_base.dart';
-import 'package:remedi_flutter_base/ui/splash_ui.dart';
-import 'package:remedi_flutter_base/view_model/view_model.dart';
+import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_base_app/ui/splash_ui.dart';
+import 'package:remedi_flutter_base_app/view_model/view_model.dart';
 
 import 'splash_view.dart';
 

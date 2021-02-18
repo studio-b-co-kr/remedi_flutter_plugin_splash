@@ -1,4 +1,4 @@
-library remedi_flutter_base;
+library remedi_flutter_base_app;
 
 import 'package:flutter/widgets.dart';
 

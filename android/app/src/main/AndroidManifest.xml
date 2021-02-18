@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.remedi.flutter.remedi_flutter_base">
+          package="com.remedi.flutter.remedi_flutter_base_app">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
@@ -8,7 +8,7 @@
     <application
             android:name="io.flutter.app.FlutterApplication"
             android:icon="@mipmap/ic_launcher"
-            android:label="remedi_flutter_base">
+            android:label="remedi_flutter_base_app">
         <activity
                 android:name=".MainActivity"
                 android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

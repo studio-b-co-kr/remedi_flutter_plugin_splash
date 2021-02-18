@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:remedi_flutter_base/data/i_dto.dart';
+import 'package:remedi_flutter_base_app/data/i_dto.dart';
 
-import '../remedi_flutter_base.dart';
+import '../remedi_flutter_base_app.dart';
 import 'dio_api_factory.dart';
 
 abstract class DioApiService {

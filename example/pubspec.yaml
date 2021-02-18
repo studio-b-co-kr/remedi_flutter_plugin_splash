@@ -29,7 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
 
   cupertino_icons: ^1.0.0
-  remedi_flutter_base:
+  remedi_flutter_base_app:
     path: ../
 
 #  kakao_flutter_mirror: ^1.0.3

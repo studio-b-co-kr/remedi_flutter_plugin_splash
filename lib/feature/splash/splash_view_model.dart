@@ -1,6 +1,6 @@
-import 'package:remedi_flutter_base/error/app_error.dart';
+import 'package:remedi_flutter_base_app/error/app_error.dart';
 
-import '../../remedi_flutter_base.dart';
+import '../../remedi_flutter_base_app.dart';
 import 'splash_page.dart';
 
 class SplashViewModel extends ISplashViewModel {

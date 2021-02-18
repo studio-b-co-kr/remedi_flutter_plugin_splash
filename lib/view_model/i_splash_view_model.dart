@@ -1,6 +1,6 @@
-import 'package:remedi_flutter_base/repository/i_splash_repository.dart';
+import 'package:remedi_flutter_base_app/repository/i_splash_repository.dart';
 
-import '../remedi_flutter_base.dart';
+import '../remedi_flutter_base_app.dart';
 
 abstract class ISplashViewModel
     extends BaseViewModel<SplashViewState, ISplashRepository> {

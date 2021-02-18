@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:dio_firebase_performance/dio_firebase_performance.dart';
 import 'package:dio_flutter_transformer/dio_flutter_transformer.dart';
-import 'package:remedi_flutter_base/app_config.dart';
-import 'package:remedi_flutter_base/error/app_error.dart';
+import 'package:remedi_flutter_base_app/app_config.dart';
+import 'package:remedi_flutter_base_app/error/app_error.dart';
 
 typedef FromJsonMap = void Function(int code, dynamic jsonMap);
 

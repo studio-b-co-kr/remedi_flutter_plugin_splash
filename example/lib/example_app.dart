@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
 
 import 'resources/app_images.dart';
 

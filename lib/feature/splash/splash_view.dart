@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:multiscreen/multiscreen.dart';
 import 'package:provider/provider.dart';
-import 'package:remedi_flutter_base/app_manager.dart';
+import 'package:remedi_flutter_base_app/app_manager.dart';
 import 'package:stacked_mvvm/stacked_mvvm.dart';
 
-import '../../remedi_flutter_base.dart';
+import '../../remedi_flutter_base_app.dart';
 
 class SplashView extends BindingView<ISplashViewModel> {
   @override

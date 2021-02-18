@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
 
 import 'app_routes.dart' as routes;
 import 'app_theme.dart' as appTheme;

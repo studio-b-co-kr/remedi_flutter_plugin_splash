@@ -2,7 +2,7 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:remedi_flutter_base/remedi_flutter_base.dart';
+import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
 
 import 'app_manager.dart';
 
