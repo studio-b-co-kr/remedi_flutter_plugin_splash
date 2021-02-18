@@ -69,7 +69,7 @@ class SplashViewModel extends ISplashViewModel {
       return;
     }
 
-    if (ret != null && ret) {
+    if (ret == null || ret) {
       afterIntro();
       return;
     }
@@ -80,7 +80,7 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterIntro() async {
     var ret = await repository.donePermissionGrant();
-    if (ret != null && ret) {
+    if (ret == null || ret) {
       afterPermission();
       return;
     }
@@ -91,7 +91,7 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterPermission() async {
     var ret = await repository.isLoggedIn();
-    if (ret != null && ret) {
+    if (ret == null || ret) {
       afterLogin();
       return;
     }
@@ -102,7 +102,7 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterLogin() async {
     var ret = await repository.doneOnboarding();
-    if (ret != null && ret) {
+    if (ret == null || ret) {
       afterOnboarding();
       return;
     }

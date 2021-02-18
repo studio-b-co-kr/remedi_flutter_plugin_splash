@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multiscreen/multiscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:remedi_flutter_base_app/app_manager.dart';
@@ -18,8 +19,10 @@ class SplashView extends BindingView<ISplashViewModel> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Spacer(flex: 1),
-            Image.asset(
-              "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
+            _images(
+              buildContext,
+              image:
+                  "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
               width: resize(200),
             ),
             Expanded(
@@ -61,14 +64,30 @@ class SplashView extends BindingView<ISplashViewModel> {
                 Spacer(flex: 1),
               ]),
             ),
-            Image.asset(
-              "${Provider.of<AppManager>(buildContext, listen: false).logoCompany}",
-              width: resize(100),
+            _images(
+              buildContext,
+              image:
+                  "${Provider.of<AppManager>(buildContext, listen: false).logoCompany}",
+              width: 100,
             ),
             SizedBox(height: resize(16)),
           ]),
         ),
       ),
+    );
+  }
+
+  Widget _images(BuildContext buildContext, {String image, double width}) {
+    assert(image != null);
+    if (image.contains("svg")) {
+      return SvgPicture.asset(
+        image,
+        width: resize(width),
+      );
+    }
+    return Image.asset(
+      image,
+      width: resize(width),
     );
   }
 }
