@@ -74,8 +74,8 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
       case SplashViewState.ForceUpdate:
         if (forceUpdatePageRouteName != null &&
             forceUpdatePageRouteName.contains('/')) {
-          var ret =
-              await Navigator.of(context).pushNamed(forceUpdatePageRouteName);
+          var ret = await Navigator.of(context)
+              .pushReplacementNamed(forceUpdatePageRouteName);
           if (ret != null) {
             viewModel.afterForceUpdate();
             return;

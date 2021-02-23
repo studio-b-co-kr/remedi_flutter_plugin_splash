@@ -1,3 +1,4 @@
+import 'package:example/feature/force_update/force_update_repository.dart';
 import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
 import 'package:remedi_flutter_base_app/repository/i_splash_repository.dart';
 import 'package:remedi_flutter_plugin_auth/auth.dart';
@@ -36,7 +37,7 @@ class SplashRepository implements ISplashRepository {
 
   @override
   Future<bool> needToUpdate() async {
-    return false;
+    return ForceUpdateRepository.instance.needToUpdate;
   }
 
   @override
