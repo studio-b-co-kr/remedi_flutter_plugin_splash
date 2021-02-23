@@ -66,7 +66,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         break;
       case SplashViewState.Intro:
         if (introPageRouteName != null && introPageRouteName.contains('/')) {
-          var ret = await Navigator.of(context).pushNamed(introPageRouteName);
+          var ret = await Navigator.of(context).pushReplacementNamed(introPageRouteName);
         }
         break;
       case SplashViewState.Error:

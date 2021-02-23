@@ -7,6 +7,9 @@ import 'onboarding_view.dart';
 class OnboardingPage extends BasePage<IOnboardingViewModel> {
   static const ROUTE_NAME = "/onboarding";
 
+  OnboardingPage({IOnboardingViewModel viewModel})
+      : super(viewModel: viewModel);
+
   @override
   OnboardingView body(BuildContext context, viewModel, Widget child) {
     return OnboardingView();

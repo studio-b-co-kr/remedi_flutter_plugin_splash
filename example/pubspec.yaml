@@ -39,10 +39,17 @@ dependencies:
       url: https://github.com/studio-b-co-kr/remedi_flutter_plugin_update.git
       ref: master
 
+  remedi_flutter_widgets:
+    git:
+      url: https://github.com/studio-b-co-kr/remedi_flutter_widgets.git
+      ref: master
+
   stacked_mvvm:
     git:
       url: https://github.com/studio-b-co-kr/stacked_mvvm.git
       ref: master
+
+
 
 dev_dependencies:
   flutter_test:

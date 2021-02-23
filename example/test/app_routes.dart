@@ -5,6 +5,7 @@ GenerateRoutes generateRoute =
     (RouteSettings settings, {Stream<Map<dynamic, dynamic>> deepLinkStream}) {
   Route<dynamic> ret;
   switch (settings.name) {
+
   }
 
   return ret;

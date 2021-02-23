@@ -7,6 +7,8 @@ import 'intro_view.dart';
 class IntroPage extends BasePage<IIntroViewModel> {
   static const ROUTE_NAME = "/intro";
 
+  IntroPage({IIntroViewModel viewModel}) : super(viewModel: viewModel);
+
   @override
   IntroView body(
       BuildContext context, IIntroViewModel viewModel, Widget child) {
@@ -18,4 +20,16 @@ class IntroPage extends BasePage<IIntroViewModel> {
 
   @override
   String get screenName => "intro";
+
+  @override
+  void onListen(BuildContext context, IIntroViewModel viewModel) {
+    super.onListen(context, viewModel);
+    switch (viewModel.state) {
+      case IntroViewState.Init:
+        break;
+      case IntroViewState.Finish:
+
+        break;
+    }
+  }
 }
