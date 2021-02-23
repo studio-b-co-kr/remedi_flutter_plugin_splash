@@ -49,6 +49,7 @@ GenerateRoutes generateRoute =
               ));
       break;
     case SplashPage.ROUTE_NAME_APP_OPEN:
+    case SplashPage.ROUTE_NAME_AFTER_LOGIN:
       ret = MaterialPageRoute(
         settings: settings,
         builder: (context) => SplashPage(
@@ -58,7 +59,6 @@ GenerateRoutes generateRoute =
             viewModel:
                 SplashViewModel(settings.name, repo: SplashRepository())),
       );
-
       break;
     case HomePage.ROUTE_NAME:
       ret = HomePage.route(settings, SplashRepository());
