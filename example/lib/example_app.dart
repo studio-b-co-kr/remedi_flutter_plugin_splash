@@ -8,14 +8,12 @@ class ExampleApp extends StatelessWidget {
   final GenerateRoutes generateRoutes;
   final String initialRoute;
   final ThemeData theme;
-  final MaterialPageRoute generateInitialRoutes;
 
   const ExampleApp(
       {Key key,
       this.generateRoutes,
       this.initialRoute,
-      this.theme,
-      this.generateInitialRoutes})
+      this.theme,})
       : super(key: key);
 
   @override
