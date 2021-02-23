@@ -33,6 +33,7 @@ void main() async {
 
   final GlobalKey<NavigatorState> navigatorKey =
       new GlobalKey<NavigatorState>();
+
   runApp(AppContainer(
     appManager: AppManager(
         navigatorKey: navigatorKey,

@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
+
   remedi_flutter_base_app:
     path: ../
 
@@ -36,6 +37,11 @@ dependencies:
   remedi_flutter_plugin_update:
     git:
       url: https://github.com/studio-b-co-kr/remedi_flutter_plugin_update.git
+      ref: master
+
+  stacked_mvvm:
+    git:
+      url: https://github.com/studio-b-co-kr/stacked_mvvm.git
       ref: master
 
 dev_dependencies:
