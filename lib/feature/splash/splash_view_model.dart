@@ -49,7 +49,6 @@ class SplashViewModel extends ISplashViewModel {
 
   @override
   afterAppOpen() async {
-
     var ret = await repository.needToUpdate();
 
     if (ret is AppError || !ret) {
@@ -91,7 +90,7 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterPermission() async {
     var ret = await repository.isLoggedIn();
-    if (ret == null || ret) {
+    if (ret) {
       afterLogin();
       return;
     }

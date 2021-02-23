@@ -9,4 +9,9 @@ class HomeViewModel extends IHomeViewModel {
 
   @override
   IHomeRepository get repository => HomeRepository();
+
+  logout() async {
+    await repository.logout();
+    update(state: HomeViewState.Logout);
+  }
 }

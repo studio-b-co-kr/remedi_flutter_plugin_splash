@@ -1,8 +1,0 @@
-[submodule "remedi_flutter_plugin_auth"]
-	path = remedi_flutter_plugin_auth
-	url = http://github.com/studio-b-co-kr/remedi_flutter_plugin_auth.git
-	branch = master
-[submodule "remedi_flutter_plugin_update"]
-	path = remedi_flutter_plugin_update
-	url = http://github.com/studio-b-co-kr/remedi_flutter_plugin_update.git
-	branch = master

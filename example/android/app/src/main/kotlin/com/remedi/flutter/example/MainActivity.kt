@@ -1,4 +1,4 @@
-package com.remedi.flutter.example
+package com.remedi.example
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,6 @@
 import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
 import 'package:remedi_flutter_base_app/repository/i_splash_repository.dart';
+import 'package:remedi_flutter_plugin_auth/auth.dart';
 
 class SplashRepository implements ISplashRepository {
   @override
@@ -21,9 +22,10 @@ class SplashRepository implements ISplashRepository {
   }
 
   @override
-  Future<dynamic> isLoggedIn() async {
+  Future<bool> isLoggedIn() async {
     await Future.delayed(Duration(seconds: 1));
-    return true;
+    String accessToken = await Auth.accessToken;
+    return accessToken != null && accessToken.isNotEmpty;
   }
 
   @override

@@ -6,7 +6,22 @@ class HomeView extends BindingView<IHomeViewModel> {
   @override
   Widget build(BuildContext context, IHomeViewModel viewModel) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      body: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          padding: EdgeInsets.all(16),
+          child: MaterialButton(
+            textColor: Colors.white,
+            height: 48,
+            minWidth: double.maxFinite,
+            color: Colors.red,
+            onPressed: () {
+              viewModel.logout();
+            },
+            child: Text("Logout"),
+          ),
+        ),
+      ),
     );
   }
 }
