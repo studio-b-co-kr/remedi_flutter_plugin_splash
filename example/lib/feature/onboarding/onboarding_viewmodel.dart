@@ -8,4 +8,10 @@ class OnboardingViewModel extends IOnboardingViewModel {
 
   @override
   IOnboardingRepository get repository => OnboardingRepository.instance;
+
+  @override
+  finish() {
+    repository.finish();
+    update(state: OnboardingViewState.Finish);
+  }
 }

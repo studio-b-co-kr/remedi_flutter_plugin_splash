@@ -101,12 +101,12 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterLogin() async {
     var ret = await repository.doneOnboarding();
-    if (ret == null || ret) {
+    if (ret) {
       afterOnboarding();
       return;
     }
 
-    update(state: SplashViewState.Login);
+    update(state: SplashViewState.Onboarding);
   }
 
   @override
@@ -120,6 +120,7 @@ class SplashViewModel extends ISplashViewModel {
 
     if (ret is AppError) {
       _error = ret;
+      update(state: SplashViewState.Error);
       return;
     }
 

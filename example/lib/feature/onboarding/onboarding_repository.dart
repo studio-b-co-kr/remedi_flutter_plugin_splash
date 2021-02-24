@@ -12,8 +12,15 @@ class OnboardingRepository extends IOnboardingRepository {
 
   OnboardingRepository._();
 
+  bool _completed = false;
+
   @override
   Future<bool> completed() async {
     return false;
+  }
+
+  @override
+  finish() {
+    _completed = true;
   }
 }

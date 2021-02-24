@@ -20,4 +20,17 @@ class OnboardingPage extends BasePage<IOnboardingViewModel> {
 
   @override
   String get screenName => "onboarding";
+
+  @override
+  void onListen(BuildContext context, IOnboardingViewModel viewModel) {
+    super.onListen(context, viewModel);
+    switch (viewModel.state) {
+      case OnboardingViewState.Init:
+        break;
+      case OnboardingViewState.Finish:
+        Navigator.of(context)
+            .pushReplacementNamed(SplashPage.ROUTE_NAME_AFTER_ONBOARDING);
+        break;
+    }
+  }
 }

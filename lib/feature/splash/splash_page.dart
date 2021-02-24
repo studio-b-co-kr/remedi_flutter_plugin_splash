@@ -53,20 +53,18 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
       case SplashViewState.Onboarding:
         if (onBoardingPageRouteName != null &&
             onBoardingPageRouteName.contains('/')) {
-          var ret =
-              await Navigator.of(context).pushNamed(onBoardingPageRouteName);
+          Navigator.of(context).pushReplacementNamed(onBoardingPageRouteName);
         }
         break;
       case SplashViewState.Permission:
         if (permissionPageRouteName != null &&
             permissionPageRouteName.contains('/')) {
-          var ret =
-              await Navigator.of(context).pushNamed(permissionPageRouteName);
+          Navigator.of(context).pushNamed(permissionPageRouteName);
         }
         break;
       case SplashViewState.Intro:
         if (introPageRouteName != null && introPageRouteName.contains('/')) {
-          var ret = await Navigator.of(context).pushReplacementNamed(introPageRouteName);
+          Navigator.of(context).pushReplacementNamed(introPageRouteName);
         }
         break;
       case SplashViewState.Error:
@@ -74,12 +72,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
       case SplashViewState.ForceUpdate:
         if (forceUpdatePageRouteName != null &&
             forceUpdatePageRouteName.contains('/')) {
-          var ret = await Navigator.of(context)
-              .pushReplacementNamed(forceUpdatePageRouteName);
-          if (ret != null) {
-            viewModel.afterForceUpdate();
-            return;
-          }
+          Navigator.of(context).pushReplacementNamed(forceUpdatePageRouteName);
         }
         break;
       case SplashViewState.ReadyToService:
@@ -94,7 +87,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
 
   @override
   goContentsPage(BuildContext buildContext) {
-    Navigator.of(buildContext).popAndPushNamed(this.contentsPageRouteName);
+    Navigator.of(buildContext).pushReplacementNamed(this.contentsPageRouteName);
   }
 
   @override
