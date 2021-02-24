@@ -3,7 +3,7 @@ import 'package:example/repository/i_intro_repository.dart';
 class IntroRepository extends IIntroRepository {
   static IntroRepository _instance;
 
-  bool _completed = false;
+  bool _completed = true;
 
   static IntroRepository get instance {
     if (_instance == null) {

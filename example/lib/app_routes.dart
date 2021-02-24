@@ -54,6 +54,8 @@ GenerateRoutes generateRoute =
       break;
     case SplashPage.ROUTE_NAME_APP_OPEN:
     case SplashPage.ROUTE_NAME_AFTER_LOGIN:
+    case SplashPage.ROUTE_NAME_AFTER_INTRO:
+    case SplashPage.ROUTE_NAME_AFTER_ONBOARDING:
       ret = MaterialPageRoute(
         settings: settings,
         builder: (context) => SplashPage(

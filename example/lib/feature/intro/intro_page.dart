@@ -28,7 +28,8 @@ class IntroPage extends BasePage<IIntroViewModel> {
       case IntroViewState.Init:
         break;
       case IntroViewState.Finish:
-
+        Navigator.of(context)
+            .pushReplacementNamed(SplashPage.ROUTE_NAME_AFTER_INTRO);
         break;
     }
   }
