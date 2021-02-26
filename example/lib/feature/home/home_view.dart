@@ -1,6 +1,6 @@
 import 'package:example/viewmodel/i_home_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_plugin_splash/splash.dart';
 
 class HomeView extends BindingView<IHomeViewModel> {
   @override

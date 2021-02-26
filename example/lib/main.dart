@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:remedi_flutter_base_app/firebase_config.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_plugin_splash/firebase_config.dart';
+import 'package:remedi_flutter_plugin_splash/splash.dart';
 import 'package:remedi_flutter_plugin_auth/auth.dart';
 import 'package:remedi_flutter_plugin_update/force_update.dart';
 

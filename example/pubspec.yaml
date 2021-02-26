@@ -26,7 +26,7 @@ dependencies:
 
   cupertino_icons: ^1.0.0
 
-  remedi_flutter_base_app:
+  remedi_flutter_plugin_splash:
     path: ../
 
   remedi_flutter_plugin_auth:

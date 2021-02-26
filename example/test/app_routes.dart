@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_plugin_splash/splash.dart';
 
 GenerateRoutes generateRoute =
     (RouteSettings settings, {Stream<Map<dynamic, dynamic>> deepLinkStream}) {

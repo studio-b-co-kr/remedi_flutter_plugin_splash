@@ -2,13 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multiscreen/multiscreen.dart';
-import 'package:provider/provider.dart';
-import 'package:remedi_flutter_base_app/app_manager.dart';
 import 'package:stacked_mvvm/stacked_mvvm.dart';
 
-import '../../remedi_flutter_base_app.dart';
+import '../../splash.dart';
 
 class SplashView extends BindingView<ISplashViewModel> {
+  final String logoBrand;
+  final String logoCompany;
+
+  SplashView({this.logoBrand, this.logoCompany});
+
   @override
   Widget build(BuildContext buildContext, ISplashViewModel viewModel) {
     return Scaffold(
@@ -21,8 +24,7 @@ class SplashView extends BindingView<ISplashViewModel> {
             Spacer(flex: 1),
             _images(
               buildContext,
-              image:
-                  "${Provider.of<AppManager>(buildContext, listen: false).logoBrand}",
+              image: logoBrand,
               width: resize(200),
             ),
             Expanded(
@@ -66,8 +68,7 @@ class SplashView extends BindingView<ISplashViewModel> {
             ),
             _images(
               buildContext,
-              image:
-                  "${Provider.of<AppManager>(buildContext, listen: false).logoCompany}",
+              image: logoCompany,
               width: 100,
             ),
             SizedBox(height: resize(16)),

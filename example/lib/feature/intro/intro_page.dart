@@ -1,6 +1,6 @@
 import 'package:example/viewmodel/i_intro_viewmodel.dart';
 import 'package:flutter/widgets.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_plugin_splash/splash.dart';
 
 import 'intro_view.dart';
 

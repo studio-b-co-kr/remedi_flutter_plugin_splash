@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
-import 'package:remedi_flutter_base_app/ui/splash_ui.dart';
-import 'package:remedi_flutter_base_app/view_model/view_model.dart';
+import 'package:flutter/widgets.dart';
+import 'package:remedi_flutter_plugin_splash/view_model/i_splash_view_model.dart';
+import 'package:stacked_mvvm/stacked_mvvm.dart';
 
+import '../../ui/splash_ui.dart';
 import 'splash_view.dart';
 
 class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {

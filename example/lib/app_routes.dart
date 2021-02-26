@@ -3,7 +3,7 @@ import 'package:example/feature/onboarding/onboarding_page.dart';
 import 'package:example/feature/onboarding/onboarding_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:remedi_flutter_base_app/remedi_flutter_base_app.dart';
+import 'package:remedi_flutter_plugin_splash/splash.dart';
 import 'package:remedi_flutter_plugin_auth/auth.dart';
 import 'package:remedi_flutter_plugin_auth/feature/login/login_page.dart';
 import 'package:remedi_flutter_plugin_auth/feature/login/login_viewmodel.dart';
