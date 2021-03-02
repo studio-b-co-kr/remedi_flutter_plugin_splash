@@ -35,7 +35,7 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
   String get screenName => "splash";
 
   @override
-  Future logScreenOpen() async {}
+  Future logScreenOpen(String screenName) async {}
 
   @override
   onListen(BuildContext context, ISplashViewModel viewModel) async {
