@@ -18,6 +18,8 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
   final String introPageRouteName;
   final String onBoardingPageRouteName;
   final String contentsPageRouteName;
+  final String imageLogoCompany;
+  final String imageLogoApp;
 
   SplashPage({
     Key key,
@@ -27,6 +29,8 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
     this.introPageRouteName,
     this.onBoardingPageRouteName,
     this.contentsPageRouteName,
+    this.imageLogoApp,
+    this.imageLogoCompany,
     ISplashViewModel viewModel,
   })  : assert(contentsPageRouteName != null),
         super(key: key, viewModel: viewModel);
@@ -93,6 +97,9 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
   @override
   BindingView<ISplashViewModel> body(
       BuildContext context, ISplashViewModel viewModel, Widget child) {
-    return SplashView();
+    return SplashView(
+      logoBrand: imageLogoApp,
+      logoCompany: imageLogoCompany,
+    );
   }
 }

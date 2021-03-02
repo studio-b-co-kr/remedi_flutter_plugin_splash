@@ -79,7 +79,10 @@ class SplashView extends BindingView<ISplashViewModel> {
   }
 
   Widget _images(BuildContext buildContext, {String image, double width}) {
-    assert(image != null);
+    if (image == null) {
+      return Container(height: width / 4, width: width);
+    }
+
     if (image.contains("svg")) {
       return SvgPicture.asset(
         image,
