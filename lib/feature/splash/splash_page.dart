@@ -58,18 +58,24 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         if (onBoardingPageRouteName != null &&
             onBoardingPageRouteName.contains('/')) {
           Navigator.of(context).pushReplacementNamed(onBoardingPageRouteName);
+          return;
         }
+        viewModel.afterOnboarding();
         break;
       case SplashViewState.Permission:
         if (permissionPageRouteName != null &&
             permissionPageRouteName.contains('/')) {
           Navigator.of(context).pushNamed(permissionPageRouteName);
+          return;
         }
+        viewModel.afterPermission();
         break;
       case SplashViewState.Intro:
         if (introPageRouteName != null && introPageRouteName.contains('/')) {
           Navigator.of(context).pushReplacementNamed(introPageRouteName);
+          return;
         }
+        viewModel.afterIntro();
         break;
       case SplashViewState.Error:
         break;
@@ -77,7 +83,9 @@ class SplashPage extends BasePage<ISplashViewModel> implements SplashUi {
         if (forceUpdatePageRouteName != null &&
             forceUpdatePageRouteName.contains('/')) {
           Navigator.of(context).pushReplacementNamed(forceUpdatePageRouteName);
+          return;
         }
+        viewModel.afterForceUpdate();
         break;
       case SplashViewState.ReadyToService:
         break;
