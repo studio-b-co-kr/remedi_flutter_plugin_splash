@@ -1,5 +1,5 @@
-import 'package:remedi_flutter_plugin_splash/repository/i_splash_repository.dart';
 import 'package:remedi_flutter_plugin_splash/error/app_error.dart';
+import 'package:remedi_flutter_plugin_splash/repository/i_splash_repository.dart';
 
 import '../../splash.dart';
 import 'splash_page.dart';
@@ -52,24 +52,18 @@ class SplashViewModel extends ISplashViewModel {
   afterAppOpen() async {
     var ret = await repository.needToUpdate();
 
-    if (ret is AppError || !ret) {
-      afterForceUpdate();
+    if (ret) {
+      update(state: SplashViewState.ForceUpdate);
       return;
     }
 
-    update(state: SplashViewState.ForceUpdate);
+    afterForceUpdate();
   }
 
   @override
   afterForceUpdate() async {
     var ret = await repository.doneIntro();
-    if (ret is AppError) {
-      _error = ret;
-      update(state: SplashViewState.Error);
-      return;
-    }
-
-    if (ret == null || ret) {
+    if (ret) {
       afterIntro();
       return;
     }
@@ -80,7 +74,7 @@ class SplashViewModel extends ISplashViewModel {
   @override
   afterIntro() async {
     var ret = await repository.donePermissionGrant();
-    if (ret == null || ret) {
+    if (ret) {
       afterPermission();
       return;
     }
